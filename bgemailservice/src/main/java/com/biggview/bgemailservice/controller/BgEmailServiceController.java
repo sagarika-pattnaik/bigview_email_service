@@ -18,6 +18,7 @@ public class BgEmailServiceController {
     EmailService emailService;
 
     @PostMapping({ "/sendEmail" })
+    @CrossOrigin(origins = {"http://localhost:8080","http://localhost:3000","https://biggview.com/","https://3.7.159.102:8080","www.biggview.com"})
     public List<String> createEmployee(@RequestBody final EmailDetails emailDetails) {
         emailDetails.setSendTo("heebookingmgt@gmail.com");
         System.out.println("value of Body is:" + emailDetails.getBody());
