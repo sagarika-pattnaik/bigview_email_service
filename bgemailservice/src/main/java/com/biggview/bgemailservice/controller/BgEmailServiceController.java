@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +22,7 @@ public class BgEmailServiceController {
     EmailService emailService;
 
     @PostMapping({ "/sendEmail" })
-    @CrossOrigin(origins = {"http://localhost:8080","http://localhost:3000","https://biggview.com/","https://3.7.159.102:8080","www.biggview.com"})
+    @CrossOrigin(origins = {"http://localhost:3000","https://biggview.com/","www.biggview.com","https://148.72.244.22:3000","https://148.72.244.22:8080","https://www.biggview.com"})
     public List<String> createEmployee(@RequestBody final EmailDetails emailDetails) {
         emailDetails.setSendTo("heebookingmgt@gmail.com");
         System.out.println("value of Body is:" + emailDetails.getBody());
@@ -28,5 +32,12 @@ public class BgEmailServiceController {
         final List<String> response = new ArrayList<>();
         response.add("Email sent successfully");
         return response;
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String hello() {
+
+        return "welcome to spring boot application";
+
     }
 }

@@ -21,7 +21,7 @@ public class BgemailserviceApplication {
 		return new WebMvcConfigurerAdapter() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/sendEmail").allowedOrigins("http://localhost:8080","http://localhost:3000","https://biggview.com/","https://3.7.159.102:8080","www.biggview.com");
+				registry.addMapping("/sendEmail").allowedOrigins("http://localhost:3000","https://biggview.com/","www.biggview.com","https://148.72.244.22:3000","https://148.72.244.22:8080","https://www.biggview.com");
 			}
 		};
 	}

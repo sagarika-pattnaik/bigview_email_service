@@ -1,5 +1,13 @@
 server:
   port: 8098
+  ssl:
+    key-store-password: Bapa123@@@
+    key-store: /home/biggview/certificate/biggview.p12
+    key-store-type: PKCS12
+
+security:
+  require-ssl: true
+
 
 eureka:         #tells about the Eureka server details and its refresh time
   instance:
