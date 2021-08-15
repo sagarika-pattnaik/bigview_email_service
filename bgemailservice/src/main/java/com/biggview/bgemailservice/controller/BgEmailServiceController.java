@@ -22,7 +22,7 @@ public class BgEmailServiceController {
     EmailService emailService;
 
     @PostMapping({ "/sendEmail" })
-    @CrossOrigin(origins = {"http://localhost:3000","https://biggview.com/","www.biggview.com","https://148.72.244.22:3000","https://148.72.244.22:8080","https://www.biggview.com"})
+    @CrossOrigin(origins = {"https://biggview.com/","www.biggview.com","https://148.72.244.22:3000","https://148.72.244.22:8080","https://www.biggview.com"})
     public List<String> createEmployee(@RequestBody final EmailDetails emailDetails) {
         emailDetails.setSendTo("heebookingmgt@gmail.com");
         System.out.println("value of Body is:" + emailDetails.getBody());
